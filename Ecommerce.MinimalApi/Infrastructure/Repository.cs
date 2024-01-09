@@ -11,7 +11,7 @@ namespace Ecommerce.MinimalApi.Infrastructure
             this.PopulateProducts();
         }
 
-        public async Task<Product> Create(Product product)
+        public async Task<Product> CreateAsync(Product product)
         {
             this._products.Add(product);
 

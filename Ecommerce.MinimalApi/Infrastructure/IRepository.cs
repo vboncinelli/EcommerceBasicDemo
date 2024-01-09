@@ -8,6 +8,6 @@ namespace Ecommerce.MinimalApi.Infrastructure
 
         Task<Product?> FindAsync(int id);
 
-        Task<Product> Create(Product product);
+        Task<Product> CreateAsync(Product product);
     }
 }

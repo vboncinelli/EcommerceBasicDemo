@@ -21,8 +21,20 @@ namespace Ecommerce.MinimalApi
                 return product is not null ? Results.Ok(product) : Results.NotFound();
             });
 
-            app.MapPost("api/products/", async (Product product, IRepository repository) => await repository.Create(product));
+            app.MapPost("api/products/", async (Product product, IRepository repository) =>
+            {
+                await repository.CreateAsync(product);
+            });
 
+            app.MapPut("api/products/", async (Product product, IRepository repository) =>
+            {
+                // aggiornare prodotto;
+            });
+
+            app.MapDelete("api/products/{id}", async (int id, IRepository repository) =>
+            {
+                // cancellare prodotto
+            });
             app.Run();
         }
     }
